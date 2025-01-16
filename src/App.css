@@ -1,0 +1,252 @@
+/* スティッキー・ヘッダーのスタイル */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  background-color: #8a2be2; /* 薄紫色 */
+  padding: 10px;
+  z-index: 1000; /* 他のコンテンツより前に表示 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+/* ロゴのスタイル */
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container h1 {
+  color: white;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ハンバーガーメニューのスタイル */
+.hamburger-button {
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+/* メニューの位置を固定にする */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #8a2be2; /* 薄紫色 */
+  color: white;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* メニューが最前面に */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* メニューが初期状態で非表示 */
+}
+
+.menu.open {
+  transform: translateX(0); /* メニューを表示 */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 20px 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+/* 基本のスタイル */
+.App {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.App-logo {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;  /* 画像が枠に収まるように、アスペクト比を保ちながら拡大縮小 */
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.form-container, .result-container {
+  margin-top: 30px;
+}
+
+.date-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  background-color: #8a2be2; /* 薄紫色 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px; /* ボタンに丸みを付ける */
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #7a1ae1;
+}
+
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #e6e6fa; /* 薄紫色 */
+  border-radius: 8px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* 角を丸くする */
+  text-decoration: none; /* 下線を消す */
+  display: inline-block; /* ボタンとしての振る舞いを維持 */
+}
+
+.back-button:hover {
+  background-color: #aaa;
+}
+
+.numerology-info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+.numerology-info h2 {
+  font-size: 24px;
+  color: #8a2be2; /* 薄紫色 */
+}
+
+.numerology-info p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 個人鑑定のお問い合わせフォームのスタイル */
+.contact-info {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を持たせます */
+  max-width: 600px;  /* フォームの最大幅を設定 */
+  margin-left: auto;
+  margin-right: auto; /* 中央寄せ */
+}
+
+.contact-info h2 {
+  font-size: 24px;
+  color: #8a2be2; /* 薄紫色 */
+  margin-bottom: 20px;
+  text-align: center; /* タイトルを中央寄せ */
+}
+
+.contact-info form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 各フォーム要素の間隔を均等に設定 */
+}
+
+.contact-info label {
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-info input,
+.contact-info textarea {
+  padding: 12px;
+  font-size: 16px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* 入力欄を丸く */
+  box-sizing: border-box;
+  width: 100%; /* 入力欄を幅いっぱいに */
+}
+
+.contact-info textarea {
+  resize: vertical; /* テキストエリアのリサイズを縦方向のみ許可 */
+  height: 120px; /* 固定高さを設定 */
+}
+
+.contact-info button {
+  padding: 12px 20px;
+  background-color: #8a2be2; /* 薄紫色 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-info button:hover {
+  background-color: #7a1ae1; /* ホバー時の色 */
+}
+
+.life-path-number {
+  font-size: 50px; /* 数字のフォントサイズを大きく */
+  font-weight: bold; /* 太字にする */
+  color: #8a2be2; /* 薄紫色にする（お好みで色を変更） */
+}
+
+.image-container {
+  width: 100%; /* 横幅を100%に設定 */
+  height: auto; /* 高さを自動調整 */
+  overflow: hidden; /* 画像が枠からはみ出ないようにする */
+}
+
+/* 画像のスタイル */
+.result-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像が枠に収まるように拡大・縮小 */
+  object-position: center; /* 画像の中央を基準に表示 */
+}
+
+/* パソコンの画面でサイズを小さくする */
+@media (min-width: 768px) { /* 画面幅が768px以上の場合、つまりパソコン用 */
+  .result-icon {
+    width: 50%;  /* 画像を50%の幅で表示 */
+    max-width: 400px; /* 最大幅を指定 */
+    margin: 0 auto; /* 中央に配置 */
+  }
+}
