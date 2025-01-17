@@ -13,14 +13,14 @@ app.post('/send-contact', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'aceonellc.info@gmail.com',  // あなたのGmailアカウント
-      pass: '79278639aA',   // あなたのGmailのアプリパスワード
+    　user: process.env.GMAIL_USER,  // 環境変数から取得
+      pass: process.env.GMAIL_PASS,  // 環境変数から取得
     },
   });
 
   const mailOptions = {
     from: email,  // フォームで入力されたメールアドレス
-    to: 'aceonellc.info@gmail.com',  // あなたのメールアドレス
+    to: '',  // あなたのメールアドレス
     subject: 'お問い合わせフォーム',
     text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
   };
